@@ -1,0 +1,1884 @@
+# Generated MED9 compression function and runtime backend.
+
+def _compress(s0, s1, s2, s3, s4, W):
+    s = (s0, s1, s2, s3, s4)
+    r3 = 0; r4 = 0
+    x8 = 0
+    xc = 0
+    x10 = 0
+    x14 = 0
+    x18 = 0
+    x1c = 0
+    x20 = 0
+    x24 = 0
+    x28 = 0
+    r21 = r3
+    r12 = r21
+    r7 = s[0]
+    r11 = r21
+    r27 = s[1]
+    r10 = r21
+    r6 = s[2]
+    r12 = r21
+    r12 = s[3]
+    x8 = r12
+    r11 = r21
+    r20 = s[4]
+    r10 = r21
+    r10 = s[0]
+    x20 = r10
+    r12 = r21
+    r23 = s[1]
+    r11 = r21
+    r11 = s[2]
+    x14 = r11
+    r10 = r21
+    r10 = s[3]
+    x10 = r10
+    r12 = r21
+    r12 = s[4]
+    x18 = r12
+    r11 = x8
+    r11 = (r11 ^ r27)
+    r11 = (r11 ^ r6)
+    r11 = (r7 + r11) & 0xFFFFFFFF
+    r12 = W[0]
+    r8 = (r11 + r12) & 0xFFFFFFFF
+    r10 = (((r8 << 11) | (r8 >> 21)) & 0xFFFFFFFF) & 0xffffffff
+    r7 = (r20 + r10) & 0xFFFFFFFF
+    r5 = (((r6 << 10) | (r6 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r16 = W[1]
+    r9 = (r5 ^ r7)
+    r9 = (r9 ^ r27)
+    r9 = (r20 + r9) & 0xFFFFFFFF
+    r12 = r16
+    r6 = (r9 + r12) & 0xFFFFFFFF
+    r11 = x8
+    r10 = (((r6 << 14) | (r6 >> 18)) & 0xFFFFFFFF) & 0xffffffff
+    r20 = (r11 + r10) & 0xFFFFFFFF
+    r15 = (((r27 << 10) | (r27 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r9 = x8
+    r10 = r15
+    r10 = (r10 ^ r20)
+    r10 = (r10 ^ r7)
+    r9 = (r9 + r10) & 0xFFFFFFFF
+    r12 = W[2]
+    r6 = (r9 + r12) & 0xFFFFFFFF
+    r11 = (((r6 << 15) | (r6 >> 17)) & 0xFFFFFFFF) & 0xffffffff
+    r27 = (r5 + r11) & 0xFFFFFFFF
+    r8 = (((r7 << 10) | (r7 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = W[3]
+    x8 = r10
+    r9 = (r8 ^ r27)
+    r9 = (r9 ^ r20)
+    r9 = (r5 + r9) & 0xFFFFFFFF
+    r12 = x8
+    r7 = (r9 + r12) & 0xFFFFFFFF
+    r11 = r15
+    r10 = (((r7 << 12) | (r7 >> 20)) & 0xFFFFFFFF) & 0xffffffff
+    r6 = (r11 + r10) & 0xFFFFFFFF
+    r17 = (((r20 << 10) | (r20 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r3 = W[4]
+    r10 = r15
+    r11 = r17
+    r11 = (r11 ^ r6)
+    r11 = (r11 ^ r27)
+    r10 = (r10 + r11) & 0xFFFFFFFF
+    r20 = (r10 + r3) & 0xFFFFFFFF
+    r12 = (((r20 << 5) | (r20 >> 27)) & 0xFFFFFFFF) & 0xffffffff
+    r7 = (r8 + r12) & 0xFFFFFFFF
+    r19 = (((r27 << 10) | (r27 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r5 = W[5]
+    r9 = (r19 ^ r7)
+    r9 = (r9 ^ r6)
+    r9 = (r8 + r9) & 0xFFFFFFFF
+    r20 = (r9 + r5) & 0xFFFFFFFF
+    r12 = r17
+    r11 = (((r20 << 8) | (r20 >> 24)) & 0xFFFFFFFF) & 0xffffffff
+    r27 = (r12 + r11) & 0xFFFFFFFF
+    r14 = (((r6 << 10) | (r6 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r15 = W[6]
+    r11 = r17
+    r12 = r14
+    r12 = (r12 ^ r27)
+    r12 = (r12 ^ r7)
+    r11 = (r11 + r12) & 0xFFFFFFFF
+    r10 = r15
+    r20 = (r11 + r10) & 0xFFFFFFFF
+    r12 = (((r20 << 7) | (r20 >> 25)) & 0xFFFFFFFF) & 0xffffffff
+    r6 = (r19 + r12) & 0xFFFFFFFF
+    r20 = (((r7 << 10) | (r7 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r11 = (r20 ^ r6)
+    r11 = (r11 ^ r27)
+    r11 = (r19 + r11) & 0xFFFFFFFF
+    r12 = W[7]
+    r7 = (r11 + r12) & 0xFFFFFFFF
+    r10 = r14
+    r9 = (((r7 << 9) | (r7 >> 23)) & 0xFFFFFFFF) & 0xffffffff
+    r8 = (r10 + r9) & 0xFFFFFFFF
+    r19 = (((r27 << 10) | (r27 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r11 = r14
+    r9 = (r19 ^ r8)
+    r9 = (r9 ^ r6)
+    r11 = (r11 + r9) & 0xFFFFFFFF
+    r12 = W[8]
+    r27 = (r11 + r12) & 0xFFFFFFFF
+    r10 = (((r27 << 11) | (r27 >> 21)) & 0xFFFFFFFF) & 0xffffffff
+    r7 = (r20 + r10) & 0xFFFFFFFF
+    r14 = (((r6 << 10) | (r6 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r6 = W[9]
+    r9 = r14
+    r9 = (r9 ^ r7)
+    r9 = (r9 ^ r8)
+    r9 = (r20 + r9) & 0xFFFFFFFF
+    r27 = (r9 + r6) & 0xFFFFFFFF
+    r12 = (((r27 << 13) | (r27 >> 19)) & 0xFFFFFFFF) & 0xffffffff
+    r20 = (r19 + r12) & 0xFFFFFFFF
+    r30 = (((r8 << 10) | (r8 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r17 = W[10]
+    r9 = (r30 ^ r20)
+    r9 = (r9 ^ r7)
+    r9 = (r19 + r9) & 0xFFFFFFFF
+    r12 = r17
+    r8 = (r9 + r12) & 0xFFFFFFFF
+    r11 = r14
+    r10 = (((r8 << 14) | (r8 >> 18)) & 0xFFFFFFFF) & 0xffffffff
+    r27 = (r11 + r10) & 0xFFFFFFFF
+    r28 = (((r7 << 10) | (r7 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r7 = W[11]
+    r10 = r14
+    r11 = (r28 ^ r27)
+    r11 = (r11 ^ r20)
+    r10 = (r10 + r11) & 0xFFFFFFFF
+    r8 = (r10 + r7) & 0xFFFFFFFF
+    r12 = (((r8 << 15) | (r8 >> 17)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r30 + r12) & 0xFFFFFFFF
+    r29 = (((r20 << 10) | (r20 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r14 = W[12]
+    r9 = (r29 ^ r31)
+    r9 = (r9 ^ r27)
+    r9 = (r30 + r9) & 0xFFFFFFFF
+    r12 = r14
+    r20 = (r9 + r12) & 0xFFFFFFFF
+    r11 = (((r20 << 6) | (r20 >> 26)) & 0xFFFFFFFF) & 0xffffffff
+    r19 = (r28 + r11) & 0xFFFFFFFF
+    r30 = (((r27 << 10) | (r27 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r8 = W[13]
+    r9 = (r30 ^ r19)
+    r9 = (r9 ^ r31)
+    r9 = (r28 + r9) & 0xFFFFFFFF
+    r20 = (r9 + r8) & 0xFFFFFFFF
+    r12 = (((r20 << 7) | (r20 >> 25)) & 0xFFFFFFFF) & 0xffffffff
+    r27 = (r29 + r12) & 0xFFFFFFFF
+    r26 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r20 = W[14]
+    r9 = (r26 ^ r27)
+    r9 = (r9 ^ r19)
+    r9 = (r29 + r9) & 0xFFFFFFFF
+    r31 = (r9 + r20) & 0xFFFFFFFF
+    r12 = (((r31 << 9) | (r31 >> 23)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r30 + r12) & 0xFFFFFFFF
+    r28 = (((r19 << 10) | (r19 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r19 = W[15]
+    r9 = (r28 ^ r29)
+    r9 = (r9 ^ r27)
+    r9 = (r30 + r9) & 0xFFFFFFFF
+    r25 = (r9 + r19) & 0xFFFFFFFF
+    r12 = (((r25 << 8) | (r25 >> 24)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r26 + r12) & 0xFFFFFFFF
+    r24 = (((r27 << 10) | (r27 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r27 = 1518469120
+    r27 = (r27 | 31129) & 0xFFFFFFFF
+    r9 = (r31 & r29)
+    r12 = (r24 & (~r31 & 0xFFFFFFFF))
+    r9 = (r9 | r12)
+    r9 = (r26 + r9) & 0xFFFFFFFF
+    r11 = W[7]
+    r9 = (r9 + r11) & 0xFFFFFFFF
+    r25 = (r9 + r27) & 0xFFFFFFFF
+    r12 = (((r25 << 7) | (r25 >> 25)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r28 + r12) & 0xFFFFFFFF
+    r25 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 & r31)
+    r9 = (r25 & (~r30 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r28 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r3) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r29 << 6) | (r29 >> 26)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r24 + r12) & 0xFFFFFFFF
+    r26 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 & r30)
+    r9 = (r26 & (~r28 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r8) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r31 << 8) | (r31 >> 24)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r25 + r12) & 0xFFFFFFFF
+    r24 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r29 & r28)
+    r9 = (r24 & (~r29 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r12 = r16
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 13) | (r31 >> 19)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r26 + r11) & 0xFFFFFFFF
+    r25 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 & r29)
+    r9 = (r25 & (~r30 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r12 = r17
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r28 << 11) | (r28 >> 21)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r24 + r11) & 0xFFFFFFFF
+    r22 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r31 & r30)
+    r9 = (r22 & (~r31 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r12 = r15
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r29 << 9) | (r29 >> 23)) & 0xFFFFFFFF) & 0xffffffff
+    r26 = (r25 + r11) & 0xFFFFFFFF
+    r24 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r26 & r31)
+    r9 = (r24 & (~r26 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r19) & 0xFFFFFFFF
+    r30 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r30 << 7) | (r30 >> 25)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r22 + r12) & 0xFFFFFFFF
+    r25 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 & r26)
+    r9 = (r25 & (~r28 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r22 + r10) & 0xFFFFFFFF
+    r12 = x8
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 15) | (r31 >> 17)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r24 + r11) & 0xFFFFFFFF
+    r22 = (((r26 << 10) | (r26 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r29 & r28)
+    r9 = (r22 & (~r29 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r12 = r14
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 7) | (r31 >> 25)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r25 + r11) & 0xFFFFFFFF
+    r26 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 & r29)
+    r9 = (r26 & (~r30 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r12 = W[0]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r28 << 12) | (r28 >> 20)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r22 + r11) & 0xFFFFFFFF
+    r24 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r31 & r30)
+    r9 = (r24 & (~r31 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r22 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r6) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r29 << 15) | (r29 >> 17)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r26 + r12) & 0xFFFFFFFF
+    r25 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 & r31)
+    r9 = (r25 & (~r28 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r5) & 0xFFFFFFFF
+    r30 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r30 << 9) | (r30 >> 23)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r24 + r12) & 0xFFFFFFFF
+    r26 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r29 & r28)
+    r9 = (r26 & (~r29 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r12 = W[2]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 11) | (r31 >> 21)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r25 + r11) & 0xFFFFFFFF
+    r24 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 & r29)
+    r9 = (r24 & (~r30 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r20) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r28 << 7) | (r28 >> 25)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r26 + r12) & 0xFFFFFFFF
+    r28 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r31 & r30)
+    r9 = (r28 & (~r31 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r7) & 0xFFFFFFFF
+    r25 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r25 << 13) | (r25 >> 19)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r24 + r12) & 0xFFFFFFFF
+    r25 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r22 = (~(r29 | r29)) & 0xFFFFFFFF
+    r9 = (r29 & r31)
+    r12 = (r25 & r22)
+    r9 = (r9 | r12)
+    r9 = (r24 + r9) & 0xFFFFFFFF
+    r11 = W[8]
+    r9 = (r9 + r11) & 0xFFFFFFFF
+    r26 = (r9 + r27) & 0xFFFFFFFF
+    r12 = (((r26 << 12) | (r26 >> 20)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r28 + r12) & 0xFFFFFFFF
+    r26 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r27 = 1859715072
+    r27 = (r27 | 60321) & 0xFFFFFFFF
+    r9 = (r30 | r22)
+    r9 = (r26 ^ r9)
+    r9 = (r28 + r9) & 0xFFFFFFFF
+    r12 = x8
+    r9 = (r9 + r12) & 0xFFFFFFFF
+    r24 = (r9 + r27) & 0xFFFFFFFF
+    r11 = (((r24 << 11) | (r24 >> 21)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r25 + r11) & 0xFFFFFFFF
+    r28 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r31 | (~r30 & 0xFFFFFFFF))
+    r10 = (r28 ^ r10)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r12 = r17
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r24 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r24 << 13) | (r24 >> 19)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r26 + r11) & 0xFFFFFFFF
+    r24 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r29 | (~r31 & 0xFFFFFFFF))
+    r10 = (r24 ^ r10)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r20) & 0xFFFFFFFF
+    r25 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r25 << 6) | (r25 >> 26)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r28 + r12) & 0xFFFFFFFF
+    r25 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 | (~r29 & 0xFFFFFFFF))
+    r10 = (r25 ^ r10)
+    r10 = (r28 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r3) & 0xFFFFFFFF
+    r26 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r26 << 7) | (r26 >> 25)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r24 + r12) & 0xFFFFFFFF
+    r22 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r31 | (~r30 & 0xFFFFFFFF))
+    r10 = (r22 ^ r10)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r6) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r29 << 14) | (r29 >> 18)) & 0xFFFFFFFF) & 0xffffffff
+    r26 = (r25 + r12) & 0xFFFFFFFF
+    r24 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r26 | (~r31 & 0xFFFFFFFF))
+    r10 = (r24 ^ r10)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r19) & 0xFFFFFFFF
+    r30 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r30 << 9) | (r30 >> 23)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r22 + r12) & 0xFFFFFFFF
+    r25 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 | (~r26 & 0xFFFFFFFF))
+    r10 = (r25 ^ r10)
+    r10 = (r22 + r10) & 0xFFFFFFFF
+    r12 = W[8]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 13) | (r31 >> 19)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r24 + r11) & 0xFFFFFFFF
+    r22 = (((r26 << 10) | (r26 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r29 | (~r28 & 0xFFFFFFFF))
+    r10 = (r22 ^ r10)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r12 = r16
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 15) | (r31 >> 17)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r25 + r11) & 0xFFFFFFFF
+    r26 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 | (~r29 & 0xFFFFFFFF))
+    r10 = (r26 ^ r10)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r12 = W[2]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r28 << 14) | (r28 >> 18)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r22 + r11) & 0xFFFFFFFF
+    r24 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r31 | (~r30 & 0xFFFFFFFF))
+    r10 = (r24 ^ r10)
+    r10 = (r22 + r10) & 0xFFFFFFFF
+    r12 = W[7]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r29 << 8) | (r29 >> 24)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r26 + r11) & 0xFFFFFFFF
+    r25 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 | (~r31 & 0xFFFFFFFF))
+    r10 = (r25 ^ r10)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r12 = W[0]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r29 << 13) | (r29 >> 19)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r24 + r11) & 0xFFFFFFFF
+    r26 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 | (~r28 & 0xFFFFFFFF))
+    r10 = (r26 ^ r10)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r12 = r15
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 6) | (r31 >> 26)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r25 + r11) & 0xFFFFFFFF
+    r18 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = r18
+    r9 = (r29 | (~r30 & 0xFFFFFFFF))
+    r10 = (r10 ^ r9)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r8) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r28 << 5) | (r28 >> 27)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r26 + r12) & 0xFFFFFFFF
+    r22 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r31 | (~r29 & 0xFFFFFFFF))
+    r10 = (r22 ^ r10)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r7) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r12 = r18
+    r11 = (((r28 << 12) | (r28 >> 20)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r12 + r11) & 0xFFFFFFFF
+    r24 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r9 = r18
+    r11 = (r30 | (~r31 & 0xFFFFFFFF))
+    r11 = (r24 ^ r11)
+    r9 = (r9 + r11) & 0xFFFFFFFF
+    r9 = (r9 + r5) & 0xFFFFFFFF
+    r29 = (r9 + r27) & 0xFFFFFFFF
+    r12 = (((r29 << 7) | (r29 >> 25)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r22 + r12) & 0xFFFFFFFF
+    r25 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 | (~r30 & 0xFFFFFFFF))
+    r10 = (r25 ^ r10)
+    r10 = (r22 + r10) & 0xFFFFFFFF
+    r12 = r14
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 5) | (r31 >> 27)) & 0xFFFFFFFF) & 0xffffffff
+    r26 = (r24 + r11) & 0xFFFFFFFF
+    r31 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r27 = 2400911360
+    r27 = (r27 | 48348) & 0xFFFFFFFF
+    r9 = (r26 & r31)
+    r11 = (r28 & (~r31 & 0xFFFFFFFF))
+    r9 = (r9 | r11)
+    r9 = (r24 + r9) & 0xFFFFFFFF
+    r12 = r16
+    r9 = (r9 + r12) & 0xFFFFFFFF
+    r30 = (r9 + r27) & 0xFFFFFFFF
+    r11 = (((r30 << 11) | (r30 >> 21)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r25 + r11) & 0xFFFFFFFF
+    r24 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r29 & r24)
+    r9 = (r26 & (~r24 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r6) & 0xFFFFFFFF
+    r30 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r30 << 12) | (r30 >> 20)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r31 + r12) & 0xFFFFFFFF
+    r25 = (((r26 << 10) | (r26 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 & r25)
+    r9 = (r29 & (~r25 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r31 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r7) & 0xFFFFFFFF
+    r26 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r26 << 14) | (r26 >> 18)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r24 + r12) & 0xFFFFFFFF
+    r26 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 & r26)
+    r9 = (r28 & (~r26 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r12 = r17
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 15) | (r31 >> 17)) & 0xFFFFFFFF) & 0xffffffff
+    r24 = (r25 + r11) & 0xFFFFFFFF
+    r29 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r24 & r29)
+    r9 = (r30 & (~r29 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r12 = W[0]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 14) | (r31 >> 18)) & 0xFFFFFFFF) & 0xffffffff
+    r22 = (r26 + r11) & 0xFFFFFFFF
+    r31 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r22 & r31)
+    r9 = (r24 & (~r31 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r12 = W[8]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r30 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r30 << 15) | (r30 >> 17)) & 0xFFFFFFFF) & 0xffffffff
+    r25 = (r29 + r11) & 0xFFFFFFFF
+    r18 = (((r24 << 10) | (r24 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = r18
+    r10 = (r25 & r10)
+    r11 = r18
+    r11 = (r22 & (~r11 & 0xFFFFFFFF))
+    r10 = (r10 | r11)
+    r10 = (r29 + r10) & 0xFFFFFFFF
+    r12 = r14
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r30 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r30 << 9) | (r30 >> 23)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r31 + r11) & 0xFFFFFFFF
+    r24 = (((r22 << 10) | (r22 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 & r24)
+    r9 = (r25 & (~r24 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r31 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r3) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r12 = r18
+    r11 = (((r29 << 8) | (r29 >> 24)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r12 + r11) & 0xFFFFFFFF
+    r26 = (((r25 << 10) | (r25 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r9 = r18
+    r11 = (r30 & r26)
+    r12 = (r28 & (~r26 & 0xFFFFFFFF))
+    r11 = (r11 | r12)
+    r9 = (r9 + r11) & 0xFFFFFFFF
+    r9 = (r9 + r8) & 0xFFFFFFFF
+    r31 = (r9 + r27) & 0xFFFFFFFF
+    r12 = (((r31 << 9) | (r31 >> 23)) & 0xFFFFFFFF) & 0xffffffff
+    r18 = (r24 + r12) & 0xFFFFFFFF
+    r29 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = r18
+    r10 = (r10 & r29)
+    r12 = (r30 & (~r29 & 0xFFFFFFFF))
+    r10 = (r10 | r12)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r11 = x8
+    r10 = (r10 + r11) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r31 << 14) | (r31 >> 18)) & 0xFFFFFFFF) & 0xffffffff
+    r22 = (r26 + r12) & 0xFFFFFFFF
+    r31 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r22 & r31)
+    r9 = r18
+    r9 = (r9 & (~r31 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r12 = W[7]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r30 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r30 << 5) | (r30 >> 27)) & 0xFFFFFFFF) & 0xffffffff
+    r25 = (r29 + r11) & 0xFFFFFFFF
+    r12 = r18
+    r12 = (((r12 << 10) | (r12 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    xc = r12
+    r10 = xc
+    r10 = (r25 & r10)
+    r11 = xc
+    r11 = (r22 & (~r11 & 0xFFFFFFFF))
+    r10 = (r10 | r11)
+    r10 = (r29 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r19) & 0xFFFFFFFF
+    r30 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r30 << 6) | (r30 >> 26)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r31 + r12) & 0xFFFFFFFF
+    r24 = (((r22 << 10) | (r22 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 & r24)
+    r9 = (r25 & (~r24 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r31 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r20) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r12 = xc
+    r11 = (((r29 << 8) | (r29 >> 24)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r12 + r11) & 0xFFFFFFFF
+    r26 = (((r25 << 10) | (r25 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r9 = xc
+    r11 = (r30 & r26)
+    r12 = (r28 & (~r26 & 0xFFFFFFFF))
+    r11 = (r11 | r12)
+    r9 = (r9 + r11) & 0xFFFFFFFF
+    r9 = (r9 + r5) & 0xFFFFFFFF
+    r31 = (r9 + r27) & 0xFFFFFFFF
+    r12 = (((r31 << 6) | (r31 >> 26)) & 0xFFFFFFFF) & 0xffffffff
+    r22 = (r24 + r12) & 0xFFFFFFFF
+    r29 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r22 & r29)
+    r9 = (r30 & (~r29 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r12 = r15
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 5) | (r31 >> 27)) & 0xFFFFFFFF) & 0xffffffff
+    r25 = (r26 + r11) & 0xFFFFFFFF
+    r31 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r25 & r31)
+    r9 = (r22 & (~r31 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r12 = W[2]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r30 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r30 << 12) | (r30 >> 20)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r29 + r11) & 0xFFFFFFFF
+    r26 = (((r22 << 10) | (r22 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r27 = 2840788992
+    r27 = (r27 | 64846) & 0xFFFFFFFF
+    r9 = (r25 | (~r26 & 0xFFFFFFFF))
+    r9 = (r28 ^ r9)
+    r9 = (r29 + r9) & 0xFFFFFFFF
+    r9 = (r9 + r3) & 0xFFFFFFFF
+    r24 = (r9 + r27) & 0xFFFFFFFF
+    r12 = (((r24 << 9) | (r24 >> 23)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r31 + r12) & 0xFFFFFFFF
+    r22 = (((r25 << 10) | (r25 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 | (~r22 & 0xFFFFFFFF))
+    r10 = (r30 ^ r10)
+    r10 = (r31 + r10) & 0xFFFFFFFF
+    r12 = W[0]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r29 << 15) | (r29 >> 17)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r26 + r11) & 0xFFFFFFFF
+    r29 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 | (~r29 & 0xFFFFFFFF))
+    r10 = (r31 ^ r10)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r5) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r28 << 5) | (r28 >> 27)) & 0xFFFFFFFF) & 0xffffffff
+    r26 = (r22 + r12) & 0xFFFFFFFF
+    r24 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r31 | (~r24 & 0xFFFFFFFF))
+    r10 = (r26 ^ r10)
+    r10 = (r22 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r6) & 0xFFFFFFFF
+    r30 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r30 << 11) | (r30 >> 21)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r29 + r12) & 0xFFFFFFFF
+    r25 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r26 | (~r25 & 0xFFFFFFFF))
+    r10 = (r28 ^ r10)
+    r10 = (r29 + r10) & 0xFFFFFFFF
+    r12 = W[7]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 6) | (r31 >> 26)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r24 + r11) & 0xFFFFFFFF
+    r12 = (((r26 << 10) | (r26 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    xc = r12
+    r10 = xc
+    r10 = (r28 | (~r10 & 0xFFFFFFFF))
+    r10 = (r29 ^ r10)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r12 = r14
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 8) | (r31 >> 24)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r25 + r11) & 0xFFFFFFFF
+    r18 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = r18
+    r10 = (r29 | (~r10 & 0xFFFFFFFF))
+    r10 = (r30 ^ r10)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r12 = W[2]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r11 = xc
+    r12 = (((r28 << 13) | (r28 >> 19)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r11 + r12) & 0xFFFFFFFF
+    r22 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r9 = xc
+    r12 = (r30 | (~r22 & 0xFFFFFFFF))
+    r12 = (r31 ^ r12)
+    r9 = (r9 + r12) & 0xFFFFFFFF
+    r11 = r17
+    r9 = (r9 + r11) & 0xFFFFFFFF
+    r29 = (r9 + r27) & 0xFFFFFFFF
+    r12 = r18
+    r11 = (((r29 << 12) | (r29 >> 20)) & 0xFFFFFFFF) & 0xffffffff
+    r26 = (r12 + r11) & 0xFFFFFFFF
+    r24 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r9 = r18
+    r11 = (r31 | (~r24 & 0xFFFFFFFF))
+    r11 = (r26 ^ r11)
+    r9 = (r9 + r11) & 0xFFFFFFFF
+    r9 = (r9 + r20) & 0xFFFFFFFF
+    r30 = (r9 + r27) & 0xFFFFFFFF
+    r12 = (((r30 << 5) | (r30 >> 27)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r22 + r12) & 0xFFFFFFFF
+    r25 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r26 | (~r25 & 0xFFFFFFFF))
+    r10 = (r28 ^ r10)
+    r10 = (r22 + r10) & 0xFFFFFFFF
+    r12 = r16
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 12) | (r31 >> 20)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r24 + r11) & 0xFFFFFFFF
+    r22 = (((r26 << 10) | (r26 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 | (~r22 & 0xFFFFFFFF))
+    r10 = (r29 ^ r10)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r12 = x8
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 13) | (r31 >> 19)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r25 + r11) & 0xFFFFFFFF
+    r24 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r29 | (~r24 & 0xFFFFFFFF))
+    r10 = (r30 ^ r10)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r12 = W[8]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r28 << 14) | (r28 >> 18)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r22 + r11) & 0xFFFFFFFF
+    r26 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 | (~r26 & 0xFFFFFFFF))
+    r10 = (r31 ^ r10)
+    r10 = (r22 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r7) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r28 << 11) | (r28 >> 21)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r24 + r12) & 0xFFFFFFFF
+    r28 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r31 | (~r28 & 0xFFFFFFFF))
+    r10 = (r29 ^ r10)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r12 = r15
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r25 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r25 << 8) | (r25 >> 24)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r26 + r11) & 0xFFFFFFFF
+    r18 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = r18
+    r10 = (r29 | (~r10 & 0xFFFFFFFF))
+    r10 = (r30 ^ r10)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r19) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r31 << 5) | (r31 >> 27)) & 0xFFFFFFFF) & 0xffffffff
+    r12 = (r28 + r12) & 0xFFFFFFFF
+    xc = r12
+    r11 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    x1c = r11
+    r10 = xc
+    r9 = x1c
+    r9 = (r30 | (~r9 & 0xFFFFFFFF))
+    r10 = (r10 ^ r9)
+    r10 = (r28 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r8) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r12 = r18
+    r11 = (((r31 << 6) | (r31 >> 26)) & 0xFFFFFFFF) & 0xffffffff
+    r12 = (r12 + r11) & 0xFFFFFFFF
+    x24 = r12
+    r10 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    x28 = r10
+    r27 = 1352794112
+    r27 = (r27 | 35814) & 0xFFFFFFFF
+    r11 = x20
+    r12 = x10
+    r10 = x14
+    r12 = (r10 | (~r12 & 0xFFFFFFFF))
+    r12 = (r23 ^ r12)
+    r11 = (r11 + r12) & 0xFFFFFFFF
+    r11 = (r11 + r5) & 0xFFFFFFFF
+    r30 = (r11 + r27) & 0xFFFFFFFF
+    r12 = x18
+    r10 = (((r30 << 8) | (r30 >> 24)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r12 + r10) & 0xFFFFFFFF
+    r11 = x14
+    r29 = (((r11 << 10) | (r11 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = x18
+    r12 = (r23 | (~r29 & 0xFFFFFFFF))
+    r12 = (r31 ^ r12)
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r10 = (r10 + r20) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r12 = x10
+    r11 = (((r28 << 9) | (r28 >> 23)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r12 + r11) & 0xFFFFFFFF
+    r25 = (((r23 << 10) | (r23 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r9 = x10
+    r11 = (r31 | (~r25 & 0xFFFFFFFF))
+    r11 = (r30 ^ r11)
+    r9 = (r9 + r11) & 0xFFFFFFFF
+    r12 = W[7]
+    r9 = (r9 + r12) & 0xFFFFFFFF
+    r26 = (r9 + r27) & 0xFFFFFFFF
+    r11 = (((r26 << 9) | (r26 >> 23)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r29 + r11) & 0xFFFFFFFF
+    r26 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 | (~r26 & 0xFFFFFFFF))
+    r10 = (r28 ^ r10)
+    r10 = (r29 + r10) & 0xFFFFFFFF
+    r12 = W[0]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 11) | (r31 >> 21)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r25 + r11) & 0xFFFFFFFF
+    r22 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 | (~r22 & 0xFFFFFFFF))
+    r10 = (r29 ^ r10)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r6) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r31 << 13) | (r31 >> 19)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r26 + r12) & 0xFFFFFFFF
+    r23 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r29 | (~r23 & 0xFFFFFFFF))
+    r10 = (r30 ^ r10)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r12 = W[2]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r28 << 15) | (r28 >> 17)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r22 + r11) & 0xFFFFFFFF
+    r24 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 | (~r24 & 0xFFFFFFFF))
+    r10 = (r31 ^ r10)
+    r10 = (r22 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r7) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r29 << 15) | (r29 >> 17)) & 0xFFFFFFFF) & 0xffffffff
+    r26 = (r23 + r12) & 0xFFFFFFFF
+    r25 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r31 | (~r25 & 0xFFFFFFFF))
+    r10 = (r26 ^ r10)
+    r10 = (r23 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r3) & 0xFFFFFFFF
+    r30 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r30 << 5) | (r30 >> 27)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r24 + r12) & 0xFFFFFFFF
+    r23 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r26 | (~r23 & 0xFFFFFFFF))
+    r10 = (r28 ^ r10)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r8) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r31 << 7) | (r31 >> 25)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r25 + r12) & 0xFFFFFFFF
+    r24 = (((r26 << 10) | (r26 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 | (~r24 & 0xFFFFFFFF))
+    r10 = (r29 ^ r10)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r12 = r15
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 7) | (r31 >> 25)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r23 + r11) & 0xFFFFFFFF
+    r26 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r29 | (~r26 & 0xFFFFFFFF))
+    r10 = (r30 ^ r10)
+    r10 = (r23 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r19) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r28 << 8) | (r28 >> 24)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r24 + r12) & 0xFFFFFFFF
+    r25 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 | (~r25 & 0xFFFFFFFF))
+    r10 = (r31 ^ r10)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r12 = W[8]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r29 << 11) | (r29 >> 21)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r26 + r11) & 0xFFFFFFFF
+    r23 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r31 | (~r23 & 0xFFFFFFFF))
+    r10 = (r28 ^ r10)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r12 = r16
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r29 << 14) | (r29 >> 18)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r25 + r11) & 0xFFFFFFFF
+    r26 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 | (~r26 & 0xFFFFFFFF))
+    r10 = (r30 ^ r10)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r12 = r17
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 14) | (r31 >> 18)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r23 + r11) & 0xFFFFFFFF
+    r25 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 | (~r25 & 0xFFFFFFFF))
+    r10 = (r29 ^ r10)
+    r10 = (r23 + r10) & 0xFFFFFFFF
+    r12 = x8
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r28 << 12) | (r28 >> 20)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r26 + r11) & 0xFFFFFFFF
+    r23 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r29 | (~r23 & 0xFFFFFFFF))
+    r10 = (r31 ^ r10)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r12 = r14
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r28 << 6) | (r28 >> 26)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r25 + r11) & 0xFFFFFFFF
+    r28 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r27 = 1548550144
+    r27 = (r27 | 53540) & 0xFFFFFFFF
+    r9 = (r30 & r28)
+    r11 = (r31 & (~r28 & 0xFFFFFFFF))
+    r9 = (r9 | r11)
+    r9 = (r25 + r9) & 0xFFFFFFFF
+    r12 = r15
+    r9 = (r9 + r12) & 0xFFFFFFFF
+    r29 = (r9 + r27) & 0xFFFFFFFF
+    r11 = (((r29 << 9) | (r29 >> 23)) & 0xFFFFFFFF) & 0xffffffff
+    r25 = (r23 + r11) & 0xFFFFFFFF
+    r29 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r25 & r29)
+    r9 = (r30 & (~r29 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r23 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r7) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r31 << 13) | (r31 >> 19)) & 0xFFFFFFFF) & 0xffffffff
+    r26 = (r28 + r12) & 0xFFFFFFFF
+    r31 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r26 & r31)
+    r9 = (r25 & (~r31 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r28 + r10) & 0xFFFFFFFF
+    r12 = x8
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r30 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r30 << 15) | (r30 >> 17)) & 0xFFFFFFFF) & 0xffffffff
+    r23 = (r29 + r11) & 0xFFFFFFFF
+    r24 = (((r25 << 10) | (r25 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r23 & r24)
+    r9 = (r26 & (~r24 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r29 + r10) & 0xFFFFFFFF
+    r12 = W[7]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r30 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r30 << 7) | (r30 >> 25)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r31 + r11) & 0xFFFFFFFF
+    r25 = (((r26 << 10) | (r26 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 & r25)
+    r9 = (r23 & (~r25 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r31 + r10) & 0xFFFFFFFF
+    r12 = W[0]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r29 << 12) | (r29 >> 20)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r24 + r11) & 0xFFFFFFFF
+    r26 = (((r23 << 10) | (r23 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 & r26)
+    r9 = (r28 & (~r26 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r8) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r31 << 8) | (r31 >> 24)) & 0xFFFFFFFF) & 0xffffffff
+    r12 = (r25 + r12) & 0xFFFFFFFF
+    x10 = r12
+    r29 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = x10
+    r10 = (r10 & r29)
+    r12 = (r30 & (~r29 & 0xFFFFFFFF))
+    r10 = (r10 | r12)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r5) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r31 << 9) | (r31 >> 23)) & 0xFFFFFFFF) & 0xffffffff
+    r24 = (r26 + r12) & 0xFFFFFFFF
+    r31 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r24 & r31)
+    r9 = x10
+    r9 = (r9 & (~r31 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r12 = r17
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r30 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r30 << 11) | (r30 >> 21)) & 0xFFFFFFFF) & 0xffffffff
+    r23 = (r29 + r11) & 0xFFFFFFFF
+    r12 = x10
+    r22 = (((r12 << 10) | (r12 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r23 & r22)
+    r11 = (r24 & (~r22 & 0xFFFFFFFF))
+    r10 = (r10 | r11)
+    r10 = (r29 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r20) & 0xFFFFFFFF
+    r30 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r30 << 7) | (r30 >> 25)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r31 + r12) & 0xFFFFFFFF
+    r25 = (((r24 << 10) | (r24 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 & r25)
+    r9 = (r23 & (~r25 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r31 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r19) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r29 << 7) | (r29 >> 25)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r22 + r12) & 0xFFFFFFFF
+    r26 = (((r23 << 10) | (r23 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 & r26)
+    r9 = (r28 & (~r26 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r22 + r10) & 0xFFFFFFFF
+    r12 = W[8]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 12) | (r31 >> 20)) & 0xFFFFFFFF) & 0xffffffff
+    r24 = (r25 + r11) & 0xFFFFFFFF
+    r29 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r24 & r29)
+    r9 = (r30 & (~r29 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r12 = r14
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 7) | (r31 >> 25)) & 0xFFFFFFFF) & 0xffffffff
+    r23 = (r26 + r11) & 0xFFFFFFFF
+    r31 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r23 & r31)
+    r9 = (r24 & (~r31 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r3) & 0xFFFFFFFF
+    r30 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r30 << 6) | (r30 >> 26)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r29 + r12) & 0xFFFFFFFF
+    r25 = (((r24 << 10) | (r24 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 & r25)
+    r9 = (r23 & (~r25 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r29 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r6) & 0xFFFFFFFF
+    r26 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r26 << 15) | (r26 >> 17)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r31 + r12) & 0xFFFFFFFF
+    r26 = (((r23 << 10) | (r23 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 & r26)
+    r9 = (r28 & (~r26 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r31 + r10) & 0xFFFFFFFF
+    r12 = r16
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r29 << 13) | (r29 >> 19)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r25 + r11) & 0xFFFFFFFF
+    r29 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r31 & r29)
+    r9 = (r30 & (~r29 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r12 = W[2]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r28 << 11) | (r28 >> 21)) & 0xFFFFFFFF) & 0xffffffff
+    r23 = (r26 + r11) & 0xFFFFFFFF
+    r25 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r27 = 1836056576
+    r27 = (r27 | 16115) & 0xFFFFFFFF
+    r9 = (r23 | (~r31 & 0xFFFFFFFF))
+    r9 = (r25 ^ r9)
+    r9 = (r26 + r9) & 0xFFFFFFFF
+    r9 = (r9 + r19) & 0xFFFFFFFF
+    r30 = (r9 + r27) & 0xFFFFFFFF
+    r12 = (((r30 << 9) | (r30 >> 23)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r29 + r12) & 0xFFFFFFFF
+    r26 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 | (~r23 & 0xFFFFFFFF))
+    r10 = (r26 ^ r10)
+    r10 = (r29 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r5) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r31 << 7) | (r31 >> 25)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r25 + r12) & 0xFFFFFFFF
+    r22 = (((r23 << 10) | (r23 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r29 | (~r28 & 0xFFFFFFFF))
+    r10 = (r22 ^ r10)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r12 = r16
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 15) | (r31 >> 17)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r26 + r11) & 0xFFFFFFFF
+    r23 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 | (~r29 & 0xFFFFFFFF))
+    r10 = (r23 ^ r10)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r12 = x8
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r28 << 11) | (r28 >> 21)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r22 + r11) & 0xFFFFFFFF
+    r24 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r31 | (~r30 & 0xFFFFFFFF))
+    r10 = (r24 ^ r10)
+    r10 = (r22 + r10) & 0xFFFFFFFF
+    r12 = W[7]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r29 << 8) | (r29 >> 24)) & 0xFFFFFFFF) & 0xffffffff
+    r26 = (r23 + r11) & 0xFFFFFFFF
+    r25 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r26 | (~r31 & 0xFFFFFFFF))
+    r10 = (r25 ^ r10)
+    r10 = (r23 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r20) & 0xFFFFFFFF
+    r30 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r30 << 6) | (r30 >> 26)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r24 + r12) & 0xFFFFFFFF
+    r23 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 | (~r26 & 0xFFFFFFFF))
+    r10 = (r23 ^ r10)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r12 = r15
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 6) | (r31 >> 26)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r25 + r11) & 0xFFFFFFFF
+    r24 = (((r26 << 10) | (r26 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r29 | (~r28 & 0xFFFFFFFF))
+    r10 = (r24 ^ r10)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r6) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r31 << 14) | (r31 >> 18)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r23 + r12) & 0xFFFFFFFF
+    r26 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 | (~r29 & 0xFFFFFFFF))
+    r10 = (r26 ^ r10)
+    r10 = (r23 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r7) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r28 << 12) | (r28 >> 20)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r24 + r12) & 0xFFFFFFFF
+    r25 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r31 | (~r30 & 0xFFFFFFFF))
+    r10 = (r25 ^ r10)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r12 = W[8]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r29 << 13) | (r29 >> 19)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r26 + r11) & 0xFFFFFFFF
+    r23 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 | (~r31 & 0xFFFFFFFF))
+    r10 = (r23 ^ r10)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r12 = r14
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r29 << 5) | (r29 >> 27)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r25 + r11) & 0xFFFFFFFF
+    r26 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 | (~r28 & 0xFFFFFFFF))
+    r10 = (r26 ^ r10)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r12 = W[2]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 14) | (r31 >> 18)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r23 + r11) & 0xFFFFFFFF
+    r22 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r29 | (~r30 & 0xFFFFFFFF))
+    r10 = (r22 ^ r10)
+    r10 = (r23 + r10) & 0xFFFFFFFF
+    r12 = r17
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r28 << 13) | (r28 >> 19)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r26 + r11) & 0xFFFFFFFF
+    r24 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r31 | (~r29 & 0xFFFFFFFF))
+    r10 = (r24 ^ r10)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r12 = W[0]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r28 << 13) | (r28 >> 19)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r22 + r11) & 0xFFFFFFFF
+    r25 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 | (~r31 & 0xFFFFFFFF))
+    r10 = (r25 ^ r10)
+    r10 = (r22 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r3) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r29 << 7) | (r29 >> 25)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r24 + r12) & 0xFFFFFFFF
+    r23 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 | (~r30 & 0xFFFFFFFF))
+    r10 = (r23 ^ r10)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r8) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r29 << 5) | (r29 >> 27)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r25 + r12) & 0xFFFFFFFF
+    r26 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r27 = 2053963776
+    r27 = (r27 | 30441) & 0xFFFFFFFF
+    r9 = (r31 & r28)
+    r12 = (r26 & (~r31 & 0xFFFFFFFF))
+    r9 = (r9 | r12)
+    r9 = (r25 + r9) & 0xFFFFFFFF
+    r11 = W[8]
+    r9 = (r9 + r11) & 0xFFFFFFFF
+    r30 = (r9 + r27) & 0xFFFFFFFF
+    r12 = (((r30 << 15) | (r30 >> 17)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r23 + r12) & 0xFFFFFFFF
+    r25 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r29 & r31)
+    r9 = (r25 & (~r29 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r23 + r10) & 0xFFFFFFFF
+    r12 = r15
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r28 << 5) | (r28 >> 27)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r26 + r11) & 0xFFFFFFFF
+    r28 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 & r29)
+    r9 = (r28 & (~r30 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r3) & 0xFFFFFFFF
+    r23 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r23 << 8) | (r23 >> 24)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r25 + r12) & 0xFFFFFFFF
+    r24 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r31 & r30)
+    r9 = (r24 & (~r31 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r12 = r16
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r29 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r29 << 11) | (r29 >> 21)) & 0xFFFFFFFF) & 0xffffffff
+    r26 = (r28 + r11) & 0xFFFFFFFF
+    r25 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r26 & r31)
+    r9 = (r25 & (~r26 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r28 + r10) & 0xFFFFFFFF
+    r12 = x8
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r30 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r30 << 14) | (r30 >> 18)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r24 + r11) & 0xFFFFFFFF
+    r23 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 & r26)
+    r9 = (r23 & (~r28 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r7) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r31 << 14) | (r31 >> 18)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r25 + r12) & 0xFFFFFFFF
+    r11 = (((r26 << 10) | (r26 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    x10 = r11
+    r10 = (r29 & r28)
+    r9 = x10
+    r9 = (r9 & (~r29 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r19) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r31 << 6) | (r31 >> 26)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r23 + r12) & 0xFFFFFFFF
+    r22 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 & r29)
+    r9 = (r22 & (~r30 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r23 + r10) & 0xFFFFFFFF
+    r12 = W[0]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r11 = x10
+    r12 = (((r28 << 14) | (r28 >> 18)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r11 + r12) & 0xFFFFFFFF
+    r24 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r9 = x10
+    r12 = (r31 & r30)
+    r11 = (r24 & (~r31 & 0xFFFFFFFF))
+    r12 = (r12 | r11)
+    r9 = (r9 + r12) & 0xFFFFFFFF
+    r9 = (r9 + r5) & 0xFFFFFFFF
+    r29 = (r9 + r27) & 0xFFFFFFFF
+    r12 = (((r29 << 6) | (r29 >> 26)) & 0xFFFFFFFF) & 0xffffffff
+    r26 = (r22 + r12) & 0xFFFFFFFF
+    r25 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r26 & r31)
+    r9 = (r25 & (~r26 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r22 + r10) & 0xFFFFFFFF
+    r12 = r14
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r30 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r30 << 9) | (r30 >> 23)) & 0xFFFFFFFF) & 0xffffffff
+    r28 = (r24 + r11) & 0xFFFFFFFF
+    r23 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r28 & r26)
+    r9 = (r23 & (~r28 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r12 = W[2]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r31 << 12) | (r31 >> 20)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r25 + r11) & 0xFFFFFFFF
+    r24 = (((r26 << 10) | (r26 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r29 & r28)
+    r9 = (r24 & (~r29 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r8) & 0xFFFFFFFF
+    r31 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r31 << 9) | (r31 >> 23)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r23 + r12) & 0xFFFFFFFF
+    r25 = (((r28 << 10) | (r28 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 & r29)
+    r9 = (r25 & (~r30 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r23 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r6) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r28 << 12) | (r28 >> 20)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r24 + r12) & 0xFFFFFFFF
+    r23 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r31 & r30)
+    r9 = (r23 & (~r31 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r24 + r10) & 0xFFFFFFFF
+    r12 = W[7]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r28 << 5) | (r28 >> 27)) & 0xFFFFFFFF) & 0xffffffff
+    r29 = (r25 + r11) & 0xFFFFFFFF
+    r26 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r29 & r31)
+    r9 = (r26 & (~r29 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r25 + r10) & 0xFFFFFFFF
+    r12 = r17
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    r28 = (r10 + r27) & 0xFFFFFFFF
+    r11 = (((r28 << 15) | (r28 >> 17)) & 0xFFFFFFFF) & 0xffffffff
+    r30 = (r23 + r11) & 0xFFFFFFFF
+    r28 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 & r29)
+    r9 = (r28 & (~r30 & 0xFFFFFFFF))
+    r10 = (r10 | r9)
+    r10 = (r23 + r10) & 0xFFFFFFFF
+    r10 = (r10 + r20) & 0xFFFFFFFF
+    r25 = (r10 + r27) & 0xFFFFFFFF
+    r12 = (((r25 << 8) | (r25 >> 24)) & 0xFFFFFFFF) & 0xffffffff
+    r31 = (r26 + r12) & 0xFFFFFFFF
+    r23 = (((r29 << 10) | (r29 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r23 ^ r31)
+    r10 = (r10 ^ r30)
+    r10 = (r26 + r10) & 0xFFFFFFFF
+    r12 = r14
+    r27 = (r10 + r12) & 0xFFFFFFFF
+    r11 = (((r27 << 8) | (r27 >> 24)) & 0xFFFFFFFF) & 0xffffffff
+    r14 = (r28 + r11) & 0xFFFFFFFF
+    r29 = (((r30 << 10) | (r30 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = r14
+    r10 = (r29 ^ r10)
+    r10 = (r10 ^ r31)
+    r10 = (r28 + r10) & 0xFFFFFFFF
+    r30 = (r10 + r19) & 0xFFFFFFFF
+    r12 = (((r30 << 5) | (r30 >> 27)) & 0xFFFFFFFF) & 0xffffffff
+    r27 = (r23 + r12) & 0xFFFFFFFF
+    r30 = (((r31 << 10) | (r31 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r30 ^ r27)
+    r9 = r14
+    r10 = (r10 ^ r9)
+    r10 = (r23 + r10) & 0xFFFFFFFF
+    r12 = r17
+    r19 = (r10 + r12) & 0xFFFFFFFF
+    r11 = (((r19 << 12) | (r19 >> 20)) & 0xFFFFFFFF) & 0xffffffff
+    r17 = (r29 + r11) & 0xFFFFFFFF
+    r12 = r14
+    r31 = (((r12 << 10) | (r12 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = r17
+    r10 = (r31 ^ r10)
+    r10 = (r10 ^ r27)
+    r10 = (r29 + r10) & 0xFFFFFFFF
+    r19 = (r10 + r3) & 0xFFFFFFFF
+    r12 = (((r19 << 9) | (r19 >> 23)) & 0xFFFFFFFF) & 0xffffffff
+    r3 = (r30 + r12) & 0xFFFFFFFF
+    r19 = (((r27 << 10) | (r27 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r19 ^ r3)
+    r9 = r17
+    r10 = (r10 ^ r9)
+    r10 = (r30 + r10) & 0xFFFFFFFF
+    r12 = r16
+    r27 = (r10 + r12) & 0xFFFFFFFF
+    r11 = (((r27 << 12) | (r27 >> 20)) & 0xFFFFFFFF) & 0xffffffff
+    r16 = (r31 + r11) & 0xFFFFFFFF
+    r12 = r17
+    r30 = (((r12 << 10) | (r12 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = r16
+    r10 = (r30 ^ r10)
+    r10 = (r10 ^ r3)
+    r10 = (r31 + r10) & 0xFFFFFFFF
+    r27 = (r10 + r5) & 0xFFFFFFFF
+    r12 = (((r27 << 5) | (r27 >> 27)) & 0xFFFFFFFF) & 0xffffffff
+    r5 = (r19 + r12) & 0xFFFFFFFF
+    r14 = (((r3 << 10) | (r3 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = r14
+    r10 = (r10 ^ r5)
+    r12 = r16
+    r10 = (r10 ^ r12)
+    r10 = (r19 + r10) & 0xFFFFFFFF
+    r11 = W[8]
+    r3 = (r10 + r11) & 0xFFFFFFFF
+    r12 = (((r3 << 14) | (r3 >> 18)) & 0xFFFFFFFF) & 0xffffffff
+    r27 = (r30 + r12) & 0xFFFFFFFF
+    r11 = r16
+    r19 = (((r11 << 10) | (r11 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r19 ^ r27)
+    r10 = (r10 ^ r5)
+    r10 = (r30 + r10) & 0xFFFFFFFF
+    r12 = W[7]
+    r3 = (r10 + r12) & 0xFFFFFFFF
+    r11 = r14
+    r9 = (((r3 << 6) | (r3 >> 26)) & 0xFFFFFFFF) & 0xffffffff
+    r16 = (r11 + r9) & 0xFFFFFFFF
+    r17 = (((r5 << 10) | (r5 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = r14
+    r9 = r17
+    r11 = r16
+    r9 = (r9 ^ r11)
+    r9 = (r9 ^ r27)
+    r10 = (r10 + r9) & 0xFFFFFFFF
+    r12 = r15
+    r3 = (r10 + r12) & 0xFFFFFFFF
+    r11 = (((r3 << 8) | (r3 >> 24)) & 0xFFFFFFFF) & 0xffffffff
+    r5 = (r19 + r11) & 0xFFFFFFFF
+    r3 = (((r27 << 10) | (r27 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r3 ^ r5)
+    r9 = r16
+    r10 = (r10 ^ r9)
+    r10 = (r19 + r10) & 0xFFFFFFFF
+    r12 = W[2]
+    r27 = (r10 + r12) & 0xFFFFFFFF
+    r11 = r17
+    r9 = (((r27 << 13) | (r27 >> 19)) & 0xFFFFFFFF) & 0xffffffff
+    r15 = (r11 + r9) & 0xFFFFFFFF
+    r12 = r16
+    r19 = (((r12 << 10) | (r12 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = r17
+    r11 = r15
+    r11 = (r19 ^ r11)
+    r11 = (r11 ^ r5)
+    r10 = (r10 + r11) & 0xFFFFFFFF
+    r27 = (r10 + r8) & 0xFFFFFFFF
+    r12 = (((r27 << 6) | (r27 >> 26)) & 0xFFFFFFFF) & 0xffffffff
+    r8 = (r3 + r12) & 0xFFFFFFFF
+    r16 = (((r5 << 10) | (r5 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = r16
+    r10 = (r10 ^ r8)
+    r12 = r15
+    r10 = (r10 ^ r12)
+    r10 = (r3 + r10) & 0xFFFFFFFF
+    r5 = (r10 + r20) & 0xFFFFFFFF
+    r12 = (((r5 << 5) | (r5 >> 27)) & 0xFFFFFFFF) & 0xffffffff
+    r27 = (r19 + r12) & 0xFFFFFFFF
+    r11 = r15
+    r5 = (((r11 << 10) | (r11 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = (r5 ^ r27)
+    r10 = (r10 ^ r8)
+    r10 = (r19 + r10) & 0xFFFFFFFF
+    r12 = W[0]
+    r15 = (r10 + r12) & 0xFFFFFFFF
+    r11 = r16
+    r9 = r15
+    r9 = (((r9 << 15) | (r9 >> 17)) & 0xFFFFFFFF) & 0xffffffff
+    r20 = (r11 + r9) & 0xFFFFFFFF
+    r15 = (((r8 << 10) | (r8 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r10 = r16
+    r9 = r15
+    r9 = (r9 ^ r20)
+    r9 = (r9 ^ r27)
+    r10 = (r10 + r9) & 0xFFFFFFFF
+    r12 = x8
+    r8 = (r10 + r12) & 0xFFFFFFFF
+    r11 = (((r8 << 13) | (r8 >> 19)) & 0xFFFFFFFF) & 0xffffffff
+    r4 = (r5 + r11) & 0xFFFFFFFF
+    r12 = (((r27 << 10) | (r27 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    x8 = r12
+    r10 = x8
+    r10 = (r10 ^ r4)
+    r10 = (r10 ^ r20)
+    r10 = (r5 + r10) & 0xFFFFFFFF
+    r27 = (r10 + r6) & 0xFFFFFFFF
+    r12 = r15
+    r11 = (((r27 << 11) | (r27 >> 21)) & 0xFFFFFFFF) & 0xffffffff
+    r6 = (r12 + r11) & 0xFFFFFFFF
+    r8 = (((r20 << 10) | (r20 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r9 = r15
+    r11 = (r8 ^ r6)
+    r11 = (r11 ^ r4)
+    r9 = (r9 + r11) & 0xFFFFFFFF
+    r27 = (r9 + r7) & 0xFFFFFFFF
+    r12 = x8
+    r11 = (((r27 << 11) | (r27 >> 21)) & 0xFFFFFFFF) & 0xffffffff
+    r7 = (r12 + r11) & 0xFFFFFFFF
+    r27 = (((r4 << 10) | (r4 >> 22)) & 0xFFFFFFFF) & 0xffffffff
+    r9 = xc
+    r9 = (r27 + r9) & 0xFFFFFFFF
+    r12 = r21
+    r12 = s[1]
+    r4 = (r9 + r12) & 0xFFFFFFFF
+    r11 = r21
+    r10 = x28
+    r10 = (r8 + r10) & 0xFFFFFFFF
+    r12 = r21
+    r12 = s[2]
+    r10 = (r10 + r12) & 0xFFFFFFFF
+    t0 = r10
+    r11 = r21
+    r9 = x8
+    r12 = x1c
+    r9 = (r9 + r12) & 0xFFFFFFFF
+    r10 = r21
+    r10 = s[3]
+    r9 = (r9 + r10) & 0xFFFFFFFF
+    t1 = r9
+    r12 = r21
+    r11 = r18
+    r11 = (r7 + r11) & 0xFFFFFFFF
+    r10 = r21
+    r10 = s[4]
+    r11 = (r11 + r10) & 0xFFFFFFFF
+    t2 = r11
+    r12 = r21
+    r9 = x24
+    r9 = (r6 + r9) & 0xFFFFFFFF
+    r11 = r21
+    r11 = s[0]
+    r9 = (r9 + r11) & 0xFFFFFFFF
+    t3 = r9
+    r12 = r21
+    t4 = r4
+    return t4, t0, t1, t2, t3
+
+
+# ---------------------------------------------------------------- runtime
+import struct as _struct
+import hashlib as _hashlib
+M32 = 0xFFFFFFFF
+
+def finalize(s, tail, count):
+    """FUN_0008b734 semantics (exact from asm): SHA-1-style padding, LE byte packing."""
+    rem = count & 0x3F
+    L = [0]*16
+    for j in range(rem):
+        L[j >> 2] ^= tail[j] << ((j & 3) << 3)
+    L[rem >> 2] ^= 1 << (((rem & 3) << 3) + 7)
+    if rem > 0x37:
+        s = _compress(*s, L)
+        L = [0]*16
+    L[14] = (count << 3) & M32
+    L[15] = (count >> 29) & 7
+    return _compress(*s, L)
+
+_HASH_CACHE = {}
+
+def _py_hash(data):
+    """Pure-Python fallback (FUN_00089e58/8b734 transpiled). Byte-exact on all
+    reference regions; used when the native helper is unavailable."""
+    s = (0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476, 0xc3d2e1f0)
+    n = len(data); full = n // 64
+    unpack = _struct.unpack
+    for b in range(full):
+        W = list(unpack('<16I', data[b*64:(b+1)*64]))
+        s = _compress(*s, W)
+    return b''.join(_struct.pack('<I', w) for w in finalize(s, data[full*64:], n))
+
+# Native DLL and Python fallback
+import ctypes as _ct
+import os as _os
+import sys as _sys
+
+_NAT = {'tested': False, 'ok': False}
+_DLL = {'lib': None, 'tried': False}
+
+
+def _load_dll():
+    if _DLL['tried']:
+        return _DLL['lib']
+    _DLL['tried'] = True
+    directory = getattr(_sys, '_MEIPASS', _os.path.dirname(_os.path.abspath(__file__)))
+    path = _os.path.join(directory, 'med9_native.dll')
+    try:
+        lib = _ct.CDLL(path)
+        lib.med9_hash_buffer.argtypes = [_ct.c_char_p, _ct.c_size_t, _ct.c_char_p]
+        lib.med9_hash_buffer.restype = _ct.c_long
+    except (OSError, AttributeError):
+        return None
+    _DLL['lib'] = lib
+    return lib
+
+
+def _native_digest(data):
+    lib = _load_dll()
+    if lib is None:
+        raise RuntimeError('Native hash DLL unavailable')
+    out = _ct.create_string_buffer(20)
+    if lib.med9_hash_buffer(bytes(data), len(data), out) != 0:
+        raise RuntimeError('Native hash failed')
+    return out.raw
+
+
+def med9_hash(data):
+    """Bosch custom hash (FUN_00089e58/8b734). Memoized by content (sha256 key).
+    Uses the compiled native helper when available; falls back to the identical
+    pure-Python implementation otherwise."""
+    key = _hashlib.sha256(data).digest()
+    hit = _HASH_CACHE.get(key)
+    if hit is not None:
+        return hit
+    dig = None
+    try:
+        if not _NAT['tested']:
+            probe = data[:200]
+            _NAT['ok'] = (_native_digest(probe) == _py_hash(probe))
+            _NAT['tested'] = True
+        if _NAT['ok']:
+            dig = _native_digest(data)
+    except Exception:
+        _NAT['ok'] = False
+        _NAT['tested'] = True
+    if dig is None:
+        dig = _py_hash(data)
+    if len(_HASH_CACHE) > 64:
+        _HASH_CACHE.clear()
+    _HASH_CACHE[key] = dig
+    return dig
+
+# region table @FLS 0x81768 (start, end incl, blob FILE offset, chip, runtime-skip flag)
+# R0 lives in the internal-flash window 0x404000..0x47FEFF = MPC file 0x4000..0x7FEFF
+# and its blob (window 0x47FF00) = MPC file offset 0x7FF00
+REGIONS = [
+    (0x0004000, 0x007FEFF, 0x007FF00, 'mpc', 0),
+    (0x0020000, 0x007FEFF, 0x007FF00, 'fls', 0),
+    (0x0080000, 0x009FEFF, 0x009FF00, 'fls', 2),   # skipped at runtime (descriptor erased)
+    (0x00A0000, 0x01BFEFF, 0x01BFF00, 'fls', 0),
+    (0x01C2000, 0x01FFEFF, 0x01FFF00, 'fls', 0),
+]
+KEY_OFF = 0x80300        # u16 bitlen | n (128B) @+2 | u32 exponent C @+0x82
+
+def read_key(fls):
+    bitlen = _struct.unpack_from('>H', fls, KEY_OFF)[0]
+    n = int.from_bytes(fls[KEY_OFF+2:KEY_OFF+0x82], 'big')
+    C = _struct.unpack_from('>I', fls, KEY_OFF+0x82)[0]
+    return bitlen, n, C
+
+def decode_blob(blob, n, C=3):
+    """A^C mod n -> 128-byte block; returns (shape_ok, ffs, payload, block)."""
+    R = pow(int.from_bytes(blob, 'big'), C, n).to_bytes(128, 'big')
+    k = 2
+    while k < 128 and R[k] == 0xFF: k += 1
+    shape = R[0] == 0 and R[1] == 1 and k < 128 and R[k] == 0
+    payload = R[k+1:]
+    return shape, k-2, payload, R
+
+def region_data(idx, fls, mpc):
+    start, end, _, chip, _ = REGIONS[idx]
+    d = mpc if chip == 'mpc' else fls
+    return d[start:end+1]
+
+def verify_all(fls, mpc=None, log=lambda s: None):
+    """Verify the supported flash and MPC regions."""
+    bitlen, n, C = read_key(fls)
+    out = []
+    for idx in range(5):
+        start, end, baddr, chip, skip = REGIONS[idx]
+        name = 'R%d' % idx
+        if skip:
+            out.append(dict(idx=idx, status='SKIPPED', note='descriptor erased (factory)'))
+            log('  %s: SKIPPED by ECU (descriptor @0x1C0100 erased - factory)' % name)
+            continue
+        d = mpc if chip == 'mpc' else fls
+        if d is None:
+            out.append(dict(idx=idx, status='NO_CHIP', note=chip))
+            log('  %s: chip %s not loaded' % (name, chip))
+            continue
+        dig = med9_hash(region_data(idx, fls, mpc))
+        blob = d[baddr:baddr+128]
+        shape, ffs, payload, blk = decode_blob(blob, n, C)
+        h_ok = len(payload) >= 20 and payload[:20] == dig
+        z_ok = len(payload) >= 0x75 and payload[0x16:0x75] == b'\x00'*0x5F
+        status = 'PASS' if (shape and h_ok and z_ok) else ('STALE/MODIFIED' if shape and z_ok else 'FAIL')
+        out.append(dict(idx=idx, status=status, digest=dig.hex(), payload=payload[:20].hex(),
+                        shape=shape, ffs=ffs, hash_ok=h_ok, zeros=z_ok))
+        log('  %s: %-14s shape=%s FFs=%d hash=%s zeros95=%s' % (name, status, shape, ffs, h_ok, z_ok))
+    bs_ok, bs_bad, bs_total = verify_blocksums(fls, log)
+    out.append(dict(idx='BS', status='PASS' if bs_ok else 'FAIL',
+                    note='%d/%d rows wrong' % (len(bs_bad), bs_total) if bs_bad else ''))
+    return out
+
+def block_for(digest, free=b'\x00\x00'):
+    return int.from_bytes(b'\x00\x01' + b'\xFF'*8 + b'\x00' + digest + free + b'\x00'*0x5F, 'big')
+
+# compatibility key pair: fixed modulus + signing exponent (public constants from
+# the plugin DLL's .rdata). Files signed with it are byte-compatible across tools.
+COMPAT_N = int("05915E154580A5A876BBDC5F16426444560A838CBC1AF6D1D495D540C56EF190D89DD7DD9500CCA1513F1C8E347CB688781ECDE53D550DE3F99A1EBC2F703F8EDB6FFFF8AE4E65E386632E60680CB09651525FC11AF5402EBCC73A815C14C379FA10C644EB6405322C3B95E22DB8B36246522F6F8F41897DB6D41724A7ED9903", 16)
+COMPAT_D = int("03B63EB8D9006E704F27E83F642C42D8395C57B32811F9E13863E380839F4BB5E5BE8FE90E00886B8B7F685ECDA879B0501489437E38B3ED511169D2CA4AD50954007529D34C729B7466563B4837C1876B0EBEB713CB69E9F00E0EC1B8B0507CBD04913679AA9A4D974B23DA6C55A9C2AEEBACD8545060E08D1D5232CDB82BDB", 16)  # signing exponent for C=3 (verified: P^D mod N == A)
+
+# ---------------------------------------------------------- block checksum tables
+# Two tables of {u32 start, u32 end (INCLUSIVE), u32 expected, u32 ~expected} rows.
+# expected = sum of u16 big-endian words over the block, 32-bit accumulator
+# (ECU monitor FUN_00020600 / FUN_00020188: <=1000-byte chunks, result stored
+#  as {low16, high16} with complement shadows, mismatch -> flag + error 0x66).
+# T1 at FLS 0xA0000 (regions 1+2, 32KB blocks, terminator row start==0x000A0000);
+# T2 at FLS 0x1C33B0 (region 4 through the +0x400000 window, rows until invalid
+# complement). Rows >= 0x480000 map to FLS offsets by -0x400000. The complement
+# makes each row's word-sum constant, so patching rows never shifts other sums.
+T1_ADDR = 0xA0000
+T1_TERM = 0x000A0000
+
+def _t2_base(fls):
+    for off in range(0x1C2000, 0x1C4000, 16):
+        s, e, x, c = _struct.unpack_from('>4I', fls, off)
+        if c == (~x & 0xFFFFFFFF) and 0x005C0000 <= s < 0x00600000 and s < e:
+            return off
+    return None
+
+def _blk_rows(fls, tstart):
+    rows = []
+    for r in range(64):
+        off = tstart + r*16
+        s, e, x, c = _struct.unpack_from('>4I', fls, off)
+        if c != (~x & 0xFFFFFFFF): break
+        if tstart == T1_ADDR and s == T1_TERM: break
+        rows.append((off, s, e, x))
+    return rows
+
+def _blk_range(s, e, size):
+    if s >= 0x480000: s, e = s - 0x400000, e - 0x400000
+    if s < 0 or e >= size or s >= e: return None
+    return s, e
+
+def _blk_sum(data, i, j):
+    seg = data[i:j+1]
+    if len(seg) % 2: seg += b'\x00'
+    return sum(_struct.unpack_from('>%dH' % (len(seg)//2), seg)) & 0xFFFFFFFF
+
+def verify_blocksums(fls, log=lambda s: None):
+    """Check both tables; returns (ok, mismatches, n_rows)."""
+    bad = []
+    total = 0
+    tables = [(T1_ADDR, 'T1')]
+    t2 = _t2_base(fls)
+    if t2 is not None:
+        tables.append((t2, 'T2'))
+    for tstart, tname in tables:
+        for off, s, e, x in _blk_rows(fls, tstart):
+            total += 1
+            rng = _blk_range(s, e, len(fls))
+            if rng is None:
+                bad.append((off, s, e, x, -1)); continue
+            got = _blk_sum(fls, rng[0], rng[1])
+            if got != x:
+                bad.append((off, s, e, x, got))
+    if bad:
+        log('  block checksums: %d/%d rows WRONG (stale content or unpatched table)' % (len(bad), total))
+    else:
+        log('  block checksums: all %d rows OK' % total)
+    return (not bad), bad, total
+
+def patch_blocksum_tables(fls, log=lambda s: None):
+    """Recompute expected sums for every row from the current image. Call AFTER
+    the key is written and BEFORE the region digests are signed (the tables sit
+    inside the hashed ranges of regions 3/4)."""
+    patched = 0
+    tables = [(T1_ADDR, 'T1')]
+    t2 = _t2_base(fls)
+    if t2 is not None:
+        tables.append((t2, 'T2'))
+    for tstart, tname in tables:
+        for off, s, e, x in _blk_rows(fls, tstart):
+            rng = _blk_range(s, e, len(fls))
+            if rng is None: continue
+            got = _blk_sum(fls, rng[0], rng[1])
+            if got != x:
+                _struct.pack_into('>II', fls, off + 8, got, ~got & 0xFFFFFFFF)
+                patched += 1
+    log('  block checksum tables: %d row(s) updated' % patched)
+    return patched
+
+def forge_all(fls, mpc=None, log=lambda s: None):
+    """Re-sign all regions with the fixed compatibility key pair.
+    Deterministic: output depends only on the region content - signing the same
+    content twice gives the same file.
+    Returns (new_fls, new_mpc, info). The signing exponent is never written to
+    any output file - it only lives in this module / RAM.
+    """
+    fls = bytearray(fls)
+    mpc = bytearray(mpc) if mpc is not None else None
+    n, d = COMPAT_N, COMPAT_D
+    free = b'\xED\xB7'
+    log('  compatibility key installed (fixed modulus)')
+    _struct.pack_into('>H', fls, KEY_OFF, 0x0400)
+    fls[KEY_OFF+2:KEY_OFF+0x82] = n.to_bytes(128, 'big')
+    _struct.pack_into('>I', fls, KEY_OFF+0x82, 3)
+    # block checksum tables must be patched before signing: the key change and
+    # any content edits alter the covered blocks, and the tables themselves sit
+    # inside the hashed ranges of regions 3/4
+    patch_blocksum_tables(fls, log)
+    signed = []
+    for idx in range(5):
+        start, end, baddr, chip, skip = REGIONS[idx]
+        if chip == 'mpc' and mpc is None:
+            log('  R%d: [WARN] no MPC file - its blob CANNOT be re-signed; do not flash without it!' % idx)
+            continue
+        dig = med9_hash(region_data(idx, fls, mpc))
+        A = pow(block_for(dig, free), d, n)
+        target = mpc if chip == 'mpc' else fls
+        target[baddr:baddr+128] = A.to_bytes(128, 'big')
+        signed.append(idx)
+        log('  R%d: blob @%s 0x%X re-signed%s' % (idx, chip, baddr, '' if not skip else ' (ECU skips this region; signed anyway for completeness)'))
+    log('  self-check:')
+    res = verify_all(bytes(fls), bytes(mpc) if mpc is not None else None, log)
+    ok = all(r['status'] in ('PASS', 'SKIPPED') for r in res)
+    log('  result: %s' % ('ALL VERIFIED REGIONS PASS' if ok else 'FAILURE'))
+    return bytes(fls), (bytes(mpc) if mpc is not None else None), dict(key=n, signed=signed, ok=ok)
